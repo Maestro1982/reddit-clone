@@ -6,15 +6,18 @@ import { GrAdd } from 'react-icons/gr';
 type CommunitiesProps = {};
 
 const Communities: React.FC<CommunitiesProps> = () => {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <CreateCommunityModal open={open} handleClose={() => setOpen(false)} />
+      <CreateCommunityModal
+        isOpen={isOpen}
+        handleClose={() => setIsOpen(false)}
+      />
       <MenuItem
         width='100%'
         fontSize='10pt'
         _hover={{ bg: 'gray.100' }}
-        onClick={() => setOpen(true)}
+        onClick={() => setIsOpen(true)}
       >
         <Flex alignItems='center'>
           <Icon as={GrAdd} fontSize={20} mr={2} />
